@@ -1,6 +1,5 @@
 name: java-app-assignment-01-tests
-on: 
-    push:
+on: push
 jobs:
   run_tests:
     runs-on: ubuntu-latest
