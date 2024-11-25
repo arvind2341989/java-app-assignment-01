@@ -12,11 +12,4 @@ jobs:
           java-version: 17
           distribution: 'temurin'
           architecture: x64
-      - name: Cache Maven packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
-      - name: Run tests with Maven
-        run: mvn -B test --file pom.xml
+      - run: java -jar junit-platform-console-standalone-1.11.3.jar execute --class-path . --scan-class-path --include-classname EvenAndOddNumberTest
